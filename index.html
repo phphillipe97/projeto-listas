@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-WORKS</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Link do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -17,9 +19,15 @@
                 <h1>E-WORKS</h1>
             </div>
             <ul class="menu">
-                <li onclick="mostrarSecao('contas')">Contas a Pagar</li>
-                <li onclick="mostrarSecao('tarefas')">Lista de Tarefas</li>
-                <li onclick="mostrarSecao('supermercado')">Supermercado</li>
+                <li onclick="mostrarSecao('contas')">
+                    <i class="fas fa-file-invoice"></i> Contas a Pagar
+                </li>
+                <li onclick="mostrarSecao('tarefas')">
+                    <i class="fas fa-list"></i> Lista de Tarefas
+                </li>
+                <li onclick="mostrarSecao('supermercado')">
+                    <i class="fas fa-shopping-cart"></i> Supermercado
+                </li>
             </ul>
         </div>
 
@@ -61,8 +69,9 @@
                 <!-- Botão de exportar as contas -->
                 <button id="btnExportar" onclick="exportarDados()" style="display: none;">Exportar Dados</button>
 
-                <!-- Botão de resetar as contas -->
+                <!-- Botões de resetar -->
                 <button id="btnResetar" onclick="resetarContas()">Resetar Contas</button>
+                <button onclick="resetarTodos()">Resetar Tudo</button>
             </div>
 
             <!-- Seção Lista de Tarefas -->
@@ -93,7 +102,7 @@
                 </table>
 
                 <div id="totalContainer">
-                    <h3>Total de Tarefas: <span id="totalTarefas">0</span></h3>
+                    <h3><span id="totalTarefas">0</span></h3>
                 </div>
 
                 <!-- Botão de Resetar Tarefas -->
@@ -126,7 +135,7 @@
                 </table>
 
                 <div id="totalContainer">
-                    <h3>Total de Itens: <span id="totalItens">0</span></h3>
+                    <h3><span id="totalItens">0</span></h3>
                 </div>
 
                 <!-- Botão de Resetar Supermercado -->
