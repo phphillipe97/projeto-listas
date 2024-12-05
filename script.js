@@ -54,6 +54,11 @@ function adicionarConta() {
 
     atualizarTotal();
     salvarTodosOsDados();
+    // Limpar os campos do formulário
+    document.getElementById("descricao").value = '';
+    document.getElementById("tipo").value = '';
+    document.getElementById("valor").value = '';
+    document.getElementById("data-vencimento").value = '';    
 }
 
 // Função para remover uma conta
@@ -90,6 +95,11 @@ function adicionarTarefa() {
 
     atualizarTotalTarefas(); // Atualiza o total de tarefas
     salvarTodosOsDados();
+
+    // Limpar os campos do formulário
+    document.getElementById("descricaoTarefa").value = '';
+    document.getElementById("observacaoTarefa").value = '';
+    document.getElementById("dataEntregaTarefa").value = '';    
 }
 
 // Função para remover uma tarefa
@@ -132,6 +142,10 @@ function adicionarItem() {
 
     atualizarTotalItens(); // Atualiza o total de itens no supermercado
     salvarTodosOsDados();
+
+    // Limpar os campos do formulário
+    document.getElementById("nomeItem").value = '';
+    document.getElementById("quantidadeItem").value = '';    
 }
 
 // Função para remover um item do supermercado
