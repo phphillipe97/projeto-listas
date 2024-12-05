@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-WORKS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Menu Lateral -->
+        <div class="sidebar">
+            <div class="logo">
+                <h1>E-WORKS</h1>
+            </div>
+            <ul class="menu">
+                <li onclick="mostrarSecao('contas')">Contas a Pagar</li>
+                <li onclick="mostrarSecao('tarefas')">Lista de Tarefas</li>
+                <li onclick="mostrarSecao('supermercado')">Supermercado</li>
+            </ul>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="content">
+            <!-- Seção Contas a Pagar -->
+            <div id="contas" class="section">
+                <h2>Contas a Pagar</h2>
+
+                <!-- Formulário para adicionar conta -->
+                <div class="form-container">
+                    <input type="text" id="descricao" placeholder="Descrição da Conta">
+                    <input type="text" id="tipo" placeholder="Tipo de Conta">
+                    <input type="number" id="valor" placeholder="Valor" step="0.01">
+                    <input type="date" id="data-vencimento" placeholder="DD/MM/AAAA">
+                    <button onclick="adicionarConta()">Adicionar Conta</button>
+                </div>
+
+                <!-- Tabela de contas -->
+                <table id="contasTabela">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                            <th>Data de Vencimento</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyContas">
+                        <!-- Contas adicionadas irão aparecer aqui -->
+                    </tbody>
+                </table>
+
+                <div id="totalContainer">
+                    <h3>Valor Total: <span id="valorTotal">R$ 0,00</span></h3>
+                </div>
+
+                <!-- Botão de exportar as contas -->
+                <button id="btnExportar" onclick="exportarDados()" style="display: none;">Exportar Dados</button>
+
+                <!-- Botão de resetar as contas -->
+                <button id="btnResetar" onclick="resetarContas()">Resetar Contas</button>
+            </div>
+
+            <!-- Seção Lista de Tarefas -->
+            <div id="tarefas" class="section" style="display: none;">
+                <h2>Lista de Tarefas</h2>
+
+                <!-- Formulário para adicionar nova tarefa -->
+                <div class="form-container">
+                    <input type="text" id="descricaoTarefa" placeholder="Descrição da Tarefa">
+                    <input type="text" id="observacaoTarefa" placeholder="Observação">
+                    <input type="date" id="dataEntregaTarefa">
+                    <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+                </div>
+
+                <!-- Tabela de Tarefas -->
+                <table id="tarefasTabela">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Observação</th>
+                            <th>Data de Entrega</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyTarefas">
+                        <!-- Tarefas adicionadas irão aparecer aqui -->
+                    </tbody>
+                </table>
+
+                <div id="totalContainer">
+                    <h3>Total de Tarefas: <span id="totalTarefas">0</span></h3>
+                </div>
+
+                <!-- Botão de Resetar Tarefas -->
+                <button id="btnResetarTarefas" onclick="resetarTarefas()">Resetar Tarefas</button>
+            </div>
+
+            <!-- Seção Supermercado -->
+            <div id="supermercado" class="section" style="display: none;">
+                <h2>Lista de Supermercado</h2>
+
+                <!-- Formulário para adicionar item ao supermercado -->
+                <div class="form-container">
+                    <input type="text" id="nomeItem" placeholder="Descrição do Item">
+                    <input type="number" id="quantidadeItem" placeholder="Quantidade" min="1" step="1">
+                    <button onclick="adicionarItem()">Adicionar Item</button>
+                </div>
+
+                <!-- Tabela de Itens -->
+                <table id="supermercadoTabela">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Quantidade</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodySupermercado">
+                        <!-- Itens adicionados irão aparecer aqui -->
+                    </tbody>
+                </table>
+
+                <div id="totalContainer">
+                    <h3>Total de Itens: <span id="totalItens">0</span></h3>
+                </div>
+
+                <!-- Botão de Resetar Supermercado -->
+                <button id="btnResetarSupermercado" onclick="resetarSupermercado()">Resetar Lista</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
