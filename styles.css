@@ -184,34 +184,95 @@ button:hover {
 #btnExportar:hover {
     background-color: #2980b9;
 }
+/* Layout Responsivo para dispositivos móveis */
+@media screen and (max-width: 768px) {
+
+    /* Corpo e layout da página */
+    body {
+        padding-top: 20px; /* Reduz a distância superior em telas menores */
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Menu Lateral */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .menu li {
+        font-size: 16px;
+    }
+
+    /* Conteúdo Principal */
+    .content {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    /* Formulário de Contas a Pagar */
+    .form-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-container input,
+    .form-container button {
+        width: 100%;
+        max-width: none;
+    }
+
+    /* Tabela de Contas */
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+
+    /* Valor Total */
+    #totalContainer {
+        font-size: 18px;
+    }
+
+    /* Botão de Exportação */
+    #btnExportar {
+        padding: 12px;
+        font-size: 16px;
+        width: auto;
+        bottom: 10px; /* Ajusta a distância do botão na tela */
+    }
+}
 
 /* Layout para telas menores que 480px (móveis muito pequenos) */
 @media screen and (max-width: 480px) {
 
     /* Menu Lateral */
     .sidebar {
-        width: 100%; /* O menu lateral ocupa toda a largura da tela */
-        height: auto;
-        padding: 10px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    /* Ajuste no tamanho da logo e no menu */
-    .logo h1 {
-        font-size: 18px;
-    }
-
-    .menu li {
-        font-size: 14px;
-        padding: 8px;
+        display: none; /* Oculta o menu lateral em telas pequenas */
     }
 
     /* Conteúdo Principal */
     .content {
         padding: 10px;
-        margin-left: 0; /* Remove a margem para ajustar o conteúdo */
     }
 
     h2 {
