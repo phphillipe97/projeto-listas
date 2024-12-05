@@ -1,10 +1,18 @@
-// Função para mostrar a seção correspondente
+// Função para mostrar a seção correspondente e armazenar o último menu acessado
 function mostrarSecao(secao) {
     var secoes = document.querySelectorAll('.section');
     for (var i = 0; i < secoes.length; i++) {
         secoes[i].style.display = 'none';
     }
     document.getElementById(secao).style.display = 'block';
+    
+    // Armazenar o menu acessado
+    armazenarUltimoMenu(secao);
+}
+
+// Função para armazenar o último menu acessado
+function armazenarUltimoMenu(menu) {
+    localStorage.setItem("ultimoMenu", menu);
 }
 
 // Função para formatar a data para o formato dd/mm/aaaa
